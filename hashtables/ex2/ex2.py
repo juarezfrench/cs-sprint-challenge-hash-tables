@@ -15,11 +15,11 @@ def reconstruct_trip(tickets, length):
 
     for x in tickets:
         if x.source == "NONE":              #look for first ticket
-            route[0] = x.destination        # Put destination in [0] 
-        cache[x.source] = x.destination     # Put destination in cache
+            route[0] = x.destination        # Put of first destination in [0] 
+        cache[x.source] = x.destination     # Put in cache
 
     for y in range(1, length):              # Loop over the length of array
-        route[y] = cache[route[y - 1]]      # Look for source of ticket to be previous destination
+        route[y] = cache[route[y - 1]]      # Look for source of ticket on itinerary to be previous destination
 
     return route   
 
